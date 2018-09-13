@@ -43,8 +43,10 @@
         <StackPanel Grid.Column="0">
             <Button Style="{StaticResource OrangeButton}">просмотром событий</Button>
             <Button Style="{StaticResource OrangeButton}">просмотр статистики</Button>
-            <Button Style="{StaticResource OrangeButton}">text3</Button>
+            <Button Name="helpButton" Style="{StaticResource OrangeButton}" Command="ApplicationCommands.Help" Content="{Binding Page}"/>
         </StackPanel>
+
+        <Frame Grid.Column="1" Source="{Binding Page}"/>
 
     </Grid>
 </Window>
