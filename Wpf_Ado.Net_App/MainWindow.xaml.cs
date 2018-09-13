@@ -35,17 +35,6 @@ namespace Wpf_Ado.Net_App
         {
             InitializeComponent();
             DataContext = new Wpf_AdoViewModel();
-
-            //айяяй
-            // создаем привязку команды
-            CommandBinding commandBinding = new CommandBinding();
-            // устанавливаем команду
-            commandBinding.Command = ApplicationCommands.Help;
-            // устанавливаем метод, который будет выполняться при вызове команды
-            commandBinding.Executed += CommandBinding_Executed;
-            // добавляем привязку к коллекции привязок элемента Button
-            helpButton.CommandBindings.Add(commandBinding);
-            //---------------------------------------------
         }
 
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)

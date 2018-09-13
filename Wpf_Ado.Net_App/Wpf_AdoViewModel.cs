@@ -1,13 +1,17 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
+
 namespace Wpf_Ado.Net_App
 {
-    internal class Wpf_AdoViewModel:INotifyPropertyChanged
+    internal class Wpf_AdoViewModel: INotifyPropertyChanged
     {
+      
+
         public Wpf_AdoViewModel()
         {
-            page = "Page2.xaml";
+            page = "Page1.xaml";
         }
 
         private string page;
@@ -19,6 +23,11 @@ namespace Wpf_Ado.Net_App
                 page = value;
                 OnPropertyChanged("Page");
             }
+        }
+
+        public void ChengePage()
+        {
+            page = "Page2.xaml";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
