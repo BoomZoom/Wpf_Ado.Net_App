@@ -43,7 +43,7 @@
         <StackPanel Grid.Column="0">
             <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="{x:Static local:EPages.viewingEvents}">просмотр событий</Button>
             <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="{x:Static local:EPages.viewStatistics}">просмотр статистики</Button>
-            <Button Style="{StaticResource OrangeButton}"  Content="{Binding Page}"/>
+            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="viewStatistics" Content="{Binding Page}"/>
             
         </StackPanel>
 

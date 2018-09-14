@@ -32,15 +32,15 @@ namespace Wpf_Ado.Net_App
         {
             switch (param.ToString())
             {
-                case "first":
+                case "viewingEvents":
                     Page = "Page1.xaml";
                     break;
-                case "last":
+                case "viewStatistics":
                     Page = "Page2.xaml";
                     break;
                 default:
-                    Page = "Page2.xaml";
-                    break;
+                    throw new InvalidEnumArgumentException();
+                    
             }
 
 
