@@ -13,13 +13,13 @@ namespace Wpf_Ado.Net_App
         public Wpf_AdoViewModel()
         {
             command = new Command(ChangePage);
-            page = "Page1.xaml";
+            page = "ViewingEvents.xaml";
         }
 
         public string Page
         {
             get { return page; }
-            set
+            private set
             {
                 page = value;
                 OnPropertyChanged();
@@ -33,10 +33,10 @@ namespace Wpf_Ado.Net_App
             switch (param.ToString())
             {
                 case "viewingEvents":
-                    Page = "Page1.xaml";
+                    Page = "ViewingEvents.xaml";
                     break;
                 case "viewStatistics":
-                    Page = "Page2.xaml";
+                    Page = "ViewStatistics.xaml";
                     break;
                 default:
                     throw new InvalidEnumArgumentException();
