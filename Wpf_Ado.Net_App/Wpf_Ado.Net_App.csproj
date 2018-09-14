@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Input.Manipulations" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,7 +59,7 @@
     <Compile Include="Command.cs" />
     <Compile Include="EPages.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Compile Include="Wpf_AdoViewModel.cs" />
+    <Compile Include="ViewModels\Wpf_AdoViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

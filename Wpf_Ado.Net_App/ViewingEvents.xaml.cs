@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Wpf_Ado.Net_App
 {
     /// <summary>
@@ -23,6 +26,35 @@ namespace Wpf_Ado.Net_App
         public Page1()
         {
             InitializeComponent();
+            DataGrid.ItemsSource = GridData;
+          
         }
+
+        public DataView GridData
+        {
+            get
+            {
+                DataSet ds = new DataSet("MyDataSet");
+                
+
+                using (SqlConnection conn = new SqlConnection (@"server=DESKTOP-PC73D7E\SQLEXPRESS;database=test;integrated Security=SSPI;"))
+                {
+                    SqlCommand cmd = conn.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "SELECT * FROM dbo.Log";
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                }
+                
+                return ds.Tables[0].DefaultView;
+            }
+        }
+        
+
+
+       
     }
+
+    
 }

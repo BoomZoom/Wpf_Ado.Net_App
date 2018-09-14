@@ -7,7 +7,21 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="Page1">
-    <Grid Background="Red">
-        
+    <Grid Background="#50C878">
+
+        <DataGrid Name="DataGrid"
+                  GridLinesVisibility="All"
+                  RowBackground="#50C878" AlternatingRowBackground="Yellow"
+                  BorderBrush="Aqua" BorderThickness="5"
+                  CanUserSortColumns="True"
+                  >
+            <!--<DataGrid.Columns>
+                <DataGridTextColumn Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>-->
+            </DataGrid>
+
+
+
+
     </Grid>
 </Page>
