@@ -14,7 +14,7 @@
 
         <Style x:Key="OrangeButton" TargetType="Button">
             <!--<Setter Property="OverridesDefaultStyle" Value="True"/>-->
-            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Margin" Value="20 10 20 0"/>
             <Setter Property="FontFamily" Value="Verdana"/>
             <Setter Property="FontSize" Value="11px"/>
             <Setter Property="FontWeight" Value="Bold"/>
@@ -37,16 +37,17 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition MinWidth="200px"/>
-            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0">
-            <Button Style="{StaticResource OrangeButton}">просмотром событий</Button>
-            <Button Style="{StaticResource OrangeButton}" >просмотр статистики</Button>
-            <Button Name="helpButton" Style="{StaticResource OrangeButton}" Command="ApplicationCommands.Help" Content="{Binding Page}"/>
+            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="{x:Static local:EPages.viewingEvents}">просмотр событий</Button>
+            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="{x:Static local:EPages.viewStatistics}">просмотр статистики</Button>
+            <Button Style="{StaticResource OrangeButton}"  Content="{Binding Page}"/>
+            
         </StackPanel>
 
-        <Frame Grid.Column="1" Source="{Binding Page}"/>
+        <Frame Grid.Column="1" Source="{Binding Page}" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>

@@ -55,7 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Command\ChengePage.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="EPages.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Wpf_AdoViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

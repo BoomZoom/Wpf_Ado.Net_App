@@ -5,35 +5,60 @@ using System.Windows.Input;
 
 namespace Wpf_Ado.Net_App
 {
-    internal class Wpf_AdoViewModel: INotifyPropertyChanged
+    internal class Wpf_AdoViewModel:ViewModels.VeiwModelBase
     {
-      
+        private Command command;
+        private string page;
 
         public Wpf_AdoViewModel()
         {
+            command = new Command(ChangePage);
             page = "Page1.xaml";
         }
 
-        private string page;
         public string Page
         {
             get { return page; }
             set
             {
                 page = value;
-                OnPropertyChanged("Page");
+                OnPropertyChanged();
             }
         }
 
-        public void ChengePage()
+        public ICommand GetCommand { get => command; }
+
+        public void ChangePage(object param)
         {
-            page = "Page2.xaml";
+            switch (param.ToString())
+            {
+                case "first":
+                    Page = "Page1.xaml";
+                    break;
+                case "last":
+                    Page = "Page2.xaml";
+                    break;
+                default:
+                    Page = "Page2.xaml";
+                    break;
+            }
+
+
+            //switch ((EPages)param)
+            //{
+            //    case EPages.first:
+            //        page = "Page1.xaml";
+            //        break;
+            //    case EPages.last:
+            //        page = "Page2.xaml";
+            //        break;
+            //    default:
+            //        page = "Page2.xaml";
+            //        break;
+            //}
+
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
-        }
+
     }
 }
