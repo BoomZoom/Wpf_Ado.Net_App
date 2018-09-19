@@ -1,4 +1,4 @@
-﻿<Page x:Class="Wpf_Ado.Net_App.Page1"
+﻿<Page x:Class="Wpf_Ado.Net_App.ViewingEventsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,7 +9,7 @@
       Title="Page1">
     <Grid Background="#50C878">
 
-        <DataGrid Name="DataGrid"
+        <DataGrid Name="dataGrid"
                   GridLinesVisibility="All"
                   RowBackground="#50C878" AlternatingRowBackground="Yellow"
                   BorderBrush="Aqua" BorderThickness="5"

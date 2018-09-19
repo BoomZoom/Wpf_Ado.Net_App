@@ -42,23 +42,6 @@ namespace Wpf_Ado.Net_App
                     throw new InvalidEnumArgumentException();
                     
             }
-
-
-            //switch ((EPages)param)
-            //{
-            //    case EPages.first:
-            //        page = "Page1.xaml";
-            //        break;
-            //    case EPages.last:
-            //        page = "Page2.xaml";
-            //        break;
-            //    default:
-            //        page = "Page2.xaml";
-            //        break;
-            //}
-
         }
-
-
     }
 }

@@ -21,23 +21,42 @@ namespace Wpf_Ado.Net_App
     /// <summary>
     /// Логика взаимодействия для Page1.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class ViewingEventsPage : Page
     {
-        public Page1()
+        public ViewingEventsPage()
         {
             InitializeComponent();
-            DataGrid.ItemsSource = GridData;
-          
+            ReloadAsync();
+            dataGrid.ItemsSource = Items; 
+            
         }
 
-        public DataView GridData
+        protected DataView Items;
+
+        protected async void ReloadAsync()
         {
-            get
+           
+            try
+            {
+                Items = await GetItemsAsync();
+                dataGrid.ItemsSource = Items;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);               
+            }          
+           
+        }
+
+        public Task<DataView> GetItemsAsync(string sConnectionString= @"server=DESKTOP-E6UPCJ7\MSSQLSERVER01;database=test;integrated Security=SSPI;")
+        {
+            //HOME//DESKTOP-E6UPCJ7\MSSQLSERVER01
+            //STEP//DESKTOP-PC73D7E\SQLEXPRESS
+            return Task.Run(() =>
             {
                 DataSet ds = new DataSet("MyDataSet");
-                
 
-                using (SqlConnection conn = new SqlConnection (@"server=DESKTOP-PC73D7E\SQLEXPRESS;database=test;integrated Security=SSPI;"))
+                using (SqlConnection conn = new SqlConnection(sConnectionString))
                 {
                     SqlCommand cmd = conn.CreateCommand();
                     cmd.CommandType = CommandType.Text;
@@ -45,10 +64,11 @@ namespace Wpf_Ado.Net_App
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(ds);
+                    //  Thread.Sleep(3000);
                 }
-                
                 return ds.Tables[0].DefaultView;
             }
+            );
         }
         
 
