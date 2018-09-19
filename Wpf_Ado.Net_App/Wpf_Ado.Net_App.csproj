@@ -58,6 +58,7 @@
     </ApplicationDefinition>
     <Compile Include="Command.cs" />
     <Compile Include="EPages.cs" />
+    <Compile Include="ViewModelStatisticsPage.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\Wpf_AdoViewModel.cs" />
     <Page Include="MainWindow.xaml">

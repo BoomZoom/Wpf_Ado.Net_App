@@ -14,14 +14,7 @@
                   RowBackground="#50C878" AlternatingRowBackground="Yellow"
                   BorderBrush="Aqua" BorderThickness="5"
                   CanUserSortColumns="True"
-                  >
-            <!--<DataGrid.Columns>
-                <DataGridTextColumn Width="*"></DataGridTextColumn>
-            </DataGrid.Columns>-->
+                  >           
             </DataGrid>
-
-
-
-
     </Grid>
 </Page>

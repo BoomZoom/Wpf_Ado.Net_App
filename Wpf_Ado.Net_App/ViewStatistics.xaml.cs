@@ -22,9 +22,15 @@ namespace Wpf_Ado.Net_App
     /// </summary>
     public partial class ViewStatisticsPage : Page
     {
+        static ViewModelStatisticsPage viewModelStatisticsPage;
+        static ViewStatisticsPage()
+        {
+           viewModelStatisticsPage = new ViewModelStatisticsPage();
+        }
         public ViewStatisticsPage()
         {
             InitializeComponent();
+            DataContext = viewModelStatisticsPage;
             ReloadAsync();
         }
 
@@ -44,7 +50,7 @@ namespace Wpf_Ado.Net_App
             }
         }
 
-        public Task<DataView> GetItemsAsync(string sConnectionString = @"server=DESKTOP-E6UPCJ7\MSSQLSERVER01;database=test;integrated Security=SSPI;")
+        public Task<DataView> GetItemsAsync(string sConnectionString = @"server=DESKTOP-E6UPCJ7\SQLEXPRESS;database=test;integrated Security=SSPI;")
         {
             //HOME//DESKTOP-E6UPCJ7\MSSQLSERVER01
             //STEP//DESKTOP-PC73D7E\SQLEXPRESS

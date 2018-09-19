@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
 
 
 namespace Wpf_Ado.Net_App
@@ -64,7 +65,7 @@ namespace Wpf_Ado.Net_App
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(ds);
-                    //  Thread.Sleep(3000);
+                   //   Thread.Sleep(3000);
                 }
                 return ds.Tables[0].DefaultView;
             }
