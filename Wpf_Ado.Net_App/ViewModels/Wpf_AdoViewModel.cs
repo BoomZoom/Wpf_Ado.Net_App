@@ -25,7 +25,6 @@ namespace Wpf_Ado.Net_App
                 OnPropertyChanged();
             }
         }
-
         public ICommand GetCommand { get => command; }
 
         public void ChangePage(object param)

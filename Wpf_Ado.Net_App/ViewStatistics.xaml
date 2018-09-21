@@ -8,7 +8,7 @@
       d:DesignHeight="300" d:DesignWidth="500"
       Title="Page2">
 
-    <Grid Background="Blue">
+    <Grid Background="Azure">
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition/>
@@ -19,14 +19,14 @@
         </Grid.ColumnDefinitions>
         <GroupBox Header="Статистика" Padding="5" Grid.ColumnSpan="2">
             <StackPanel>
-                <RadioButton Content="количество входов" IsChecked="True"/>
-                <RadioButton Content="количество отработанного времени каждыйм пользователем "/>
+                <RadioButton x:Name="CountEnter"    Command="{Binding GetCommand}"  CommandParameter="{x:Static local:ECount.enter}"        Content="количество входов каждым пользователем" IsChecked="True"/>
+                <RadioButton x:Name="CountWorkTime" Command="{Binding GetCommand}"  CommandParameter="{x:Static local:ECount.workTime}"    Content="количество отработанного времени каждым пользователем "/>
             </StackPanel>
         </GroupBox>
         <StackPanel Grid.Row="1">
-            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" Content="сутки"/>
-            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" Content="неделя"/>
-            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" Content="месяц"/>            
+            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="{x:Static local:ESort.day}" Content="сутки"/>
+            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="{x:Static local:ESort.week}" Content="неделя"/>
+            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="{x:Static local:ESort.month}" Content="месяц"/>            
         </StackPanel>
 
         <DataGrid Name="dataGrid" Grid.Column="1" Grid.Row="1"

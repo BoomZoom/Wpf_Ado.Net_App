@@ -14,4 +14,13 @@ namespace Wpf_Ado.Net_App
         [Description("просмотр статистики")]
         viewStatistics
     }
+    internal enum ESort
+    {
+        day,month,week
+    }
+    internal enum ECount
+    {
+        enter,workTime
+    }
+    //TODO ПЕРЕПИСАТЬ на снек капс кейс
 }
