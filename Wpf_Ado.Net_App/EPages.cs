@@ -22,5 +22,5 @@ namespace Wpf_Ado.Net_App
     {
         enter,workTime
     }
-    //TODO ПЕРЕПИСАТЬ на снек капс кейс
+   
 }

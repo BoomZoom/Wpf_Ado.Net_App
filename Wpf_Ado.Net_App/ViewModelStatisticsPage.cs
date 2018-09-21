@@ -19,15 +19,12 @@ namespace Wpf_Ado.Net_App
         private Command command;
         private DataGrid dataGrid;
 
-        //RadioButton[] parametrs;
-
         ECount count;
         ESort sort;
 
 
-        public ViewModelStatisticsPage(DataGrid dataGrid/*, RadioButton[] parametrs*/)
+        public ViewModelStatisticsPage(DataGrid dataGrid)
         {
-            //this.parametrs = parametrs;
             this.dataGrid = dataGrid;
             command = new Command(PropertySelectAsync);
         }
@@ -38,7 +35,6 @@ namespace Wpf_Ado.Net_App
 
         private void PropertySelectAsync(object property)
         {
-            //System.Windows.Forms.MessageBox.Show(property.ToString());
             if (property is ECount)
                 count = (ECount)property;
             else if (property is ESort)
@@ -85,7 +81,7 @@ namespace Wpf_Ado.Net_App
                     {
                         if (count == ECount.enter)
                         {
-                            ReloadAsync(@"SELECT COUNT(UserName) AS Count, UserName FROM dbo.Log WHERE Time > DATEADD(MONTH, -3000, GETDATE()) GROUP BY UserName");//TODO много месяцев убрать
+                            ReloadAsync(@"SELECT COUNT(UserName) AS Count, UserName FROM dbo.Log WHERE Time > DATEADD(MONTH, -1, GETDATE()) GROUP BY UserName");
                         }
                         else if (count == ECount.workTime)
                         {
@@ -110,7 +106,6 @@ namespace Wpf_Ado.Net_App
             {
                 Items = await GetItemsAsync(CommandText: CommandText);
                 DataGrid.ItemsSource = Items;
-                //dataGrid.ItemsSource = Items;
             }
             catch (Exception ex)
             {
@@ -134,7 +129,7 @@ namespace Wpf_Ado.Net_App
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(ds);
-                    // Thread.Sleep(5000);
+                    //Thread.Sleep(5000);
                 }
                 return ds.Tables[0].DefaultView;
             }

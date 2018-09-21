@@ -22,26 +22,11 @@ namespace Wpf_Ado.Net_App
     /// </summary>
     public partial class ViewStatisticsPage : Page
     {
-
-       
-
-      //  private static ViewModelStatisticsPage viewModelStatisticsPage;
-        static ViewStatisticsPage()
-        {
-            //viewModelStatisticsPage = new ViewModelStatisticsPage(dataGrid);
-        }
         public ViewStatisticsPage()
         {
             InitializeComponent();
-            DataContext = new ViewModelStatisticsPage(dataGrid/*, new []{ CountEnter,  CountWorkTime }*/);
-            //ReloadAsync();
-            ////ReloadAsync(@"SELECT COUNT(UserName)FROM dbo.Log");
-
+            DataContext = new ViewModelStatisticsPage(dataGrid);
+         
         }
-
-       
-
-    
-      
     }
 }

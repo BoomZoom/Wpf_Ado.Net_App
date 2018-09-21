@@ -19,14 +19,14 @@
         </Grid.ColumnDefinitions>
         <GroupBox Header="Статистика" Padding="5" Grid.ColumnSpan="2">
             <StackPanel>
-                <RadioButton x:Name="CountEnter"    Command="{Binding GetCommand}"  CommandParameter="{x:Static local:ECount.enter}"        Content="количество входов каждым пользователем" IsChecked="True"/>
+                <RadioButton x:Name="CountEnter"    Command="{Binding GetCommand}"  CommandParameter="{x:Static local:ECount.enter}"       Content="количество входов каждым пользователем" IsChecked="True"/>
                 <RadioButton x:Name="CountWorkTime" Command="{Binding GetCommand}"  CommandParameter="{x:Static local:ECount.workTime}"    Content="количество отработанного времени каждым пользователем "/>
             </StackPanel>
         </GroupBox>
         <StackPanel Grid.Row="1">
-            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="{x:Static local:ESort.day}" Content="сутки"/>
-            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="{x:Static local:ESort.week}" Content="неделя"/>
-            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="{x:Static local:ESort.month}" Content="месяц"/>            
+            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="{x:Static local:ESort.day}"      Content="сутки"/>
+            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="{x:Static local:ESort.week}"     Content="неделя"/>
+            <Button Style="{StaticResource OrangeButton}" Command="{Binding GetCommand}" CommandParameter="{x:Static local:ESort.month}"    Content="месяц"/>            
         </StackPanel>
 
         <DataGrid Name="dataGrid" Grid.Column="1" Grid.Row="1"
